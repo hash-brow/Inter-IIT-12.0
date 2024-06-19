@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mphasis Foundation: CQM Solver</title>
+    <link rel="icon" type="image/png" href="./Interiit.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .Completed_Steps {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {% for _ in range(current_step - 1) %}
+        <div class="Completed_Steps">Step {{ _ + 1 }} Completed</div>
+        {% endfor %}
+        <form method="POST" enctype="multipart/form-data" action="/">
+            <h4>Step {{current_step}}: Upload Rules for Flight Score</h4>
+            <label for="Downline">Downline:</label>
+            <input type="number" name="Downline" placeholder="Weight" value="2">
+            <label for="Max-Departure-Delay">Max Departure Delay (in hrs):</label>
+            <input type="number" name="Max-Departure-Delay" placeholder="Weight" value="48">
+            <label for="Min-Layover-Time">Min Layover Time (in hrs):</label>
+            <input type="number" name="Min-Layover-Time" placeholder="Weight" value="1">
+            <label for="Max-Layover-Time">Max Layover Time (in hrs):</label>
+            <input type="number" name="Max-Layover-Time" placeholder="Weight" value="5">
+            
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
