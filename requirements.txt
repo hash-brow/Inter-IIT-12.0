@@ -1,0 +1,9 @@
+dimod==0.12.13
+dwave_cloud_client==0.11.1
+dwave_inspector==0.4.3
+dwave_preprocessing==0.6.4
+dwave_samplers==1.2.0
+dwave_system==1.21.0
+Flask==3.0.0
+pandas==2.0.0
+Werkzeug>=2.2.2
